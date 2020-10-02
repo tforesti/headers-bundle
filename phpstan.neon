@@ -1,0 +1,16 @@
+includes:
+  - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+  - vendor/phpstan/phpstan-strict-rules/rules.neon
+  - vendor/phpstan/phpstan-webmozart-assert/extension.neon
+  - vendor/thecodingmachine/phpstan-strict-rules/phpstan-strict-rules.neon
+  - vendor/thecodingmachine/phpstan-safe-rule/phpstan-safe-rule.neon
+parameters:
+  tmpDir: /tmp/phpstan
+  paths:
+    - src
+    - tests
+  level: 7
+  checkMissingIterableValueType: false
+  checkGenericClassInNonGenericObjectType: false
+  inferPrivatePropertyTypeFromConstructor: true
