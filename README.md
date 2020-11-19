@@ -19,6 +19,14 @@ batch_headers:
       condition: response.headers.get('Content-Type') matches '^image/'
 ```
 
+## Installation
+
+```console
+$ composer require batch.com/headers-bundle
+```
+
+Read the documentation for complete instructions.
+
 ## Documentation
 
 Read the documentation in [src/Resources/doc/](src/Resources/doc/index.md)
