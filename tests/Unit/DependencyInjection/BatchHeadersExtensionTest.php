@@ -38,7 +38,7 @@ class BatchHeadersExtensionTest extends TestCase
     public function testContainerWithConfig(): void
     {
         $headers = [
-            ['name' => 'x-foo', 'value' => 'bar', 'condition' => null],
+            ['name' => 'x-foo', 'value' => 'bar', 'condition' => null, 'replace' => true],
         ];
 
         $this->extension->load([['headers' => $headers]], $this->container);

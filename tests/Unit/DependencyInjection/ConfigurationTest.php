@@ -31,28 +31,28 @@ class ConfigurationTest extends TestCase
     public function validHeaderFormatProvider(): \Generator
     {
         yield 'Full' => [
-            [['name' => 'x-foo', 'value' => 'bar', 'condition' => 'true']],
-            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => 'true']]],
+            [['name' => 'x-foo', 'value' => 'bar', 'condition' => 'true', 'replace' => true]],
+            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => 'true', 'replace' => true]]],
         ];
 
         yield 'Nullable condition' => [
             [['name' => 'x-foo', 'value' => 'bar', 'condition' => null]],
-            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null]]],
+            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null, 'replace' => true]]],
         ];
 
         yield 'Unique key-value array' => [
             [['x-foo' => 'bar']],
-            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null]]],
+            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null, 'replace' => true]]],
         ];
 
         yield 'Semicolon separated string' => [
             ['x-foo: bar'],
-            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null]]],
+            ['headers' => [['name' => 'x-foo', 'value' => 'bar', 'condition' => null, 'replace' => true]]],
         ];
 
         yield 'Multi-semicolon separated string' => [
             ['x-foo: bar:baz'],
-            ['headers' => [['name' => 'x-foo', 'value' => 'bar:baz', 'condition' => null]]],
+            ['headers' => [['name' => 'x-foo', 'value' => 'bar:baz', 'condition' => null, 'replace' => true]]],
         ];
     }
 
