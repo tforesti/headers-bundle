@@ -68,6 +68,19 @@ class ResponseListenerTest extends TestCase
         static::assertSame('baz', $event->getResponse()->headers->get('x-foo'));
     }
 
+    public function testHeadersCanBeDuplicated(): void
+    {
+        $listener = self::createResponseListener([
+            ['name' => 'x-foo', 'value' => 'bar', 'replace' => false],
+            ['name' => 'x-foo', 'value' => 'baz', 'replace' => false],
+        ]);
+
+        $event = $this->createResponseEvent();
+        $listener->onKernelResponse($event);
+
+        static::assertSame(['bar', 'baz'], $event->getResponse()->headers->all('x-foo'));
+    }
+
     /** @dataProvider conditionProvider */
     public function testHeadersWithConditionAreAppliedSelectively(string $condition, bool $headerShouldBePresent): void
     {

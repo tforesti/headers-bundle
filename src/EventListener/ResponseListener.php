@@ -43,7 +43,7 @@ final class ResponseListener
                 }
             }
 
-            $response->headers->set($header['name'], $header['value']);
+            $response->headers->set($header['name'], $header['value'], $header['replace'] ?? true);
         }
     }
 }
