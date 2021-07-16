@@ -42,3 +42,19 @@ batch_headers:
       value: max-age=31536000, public
       condition: response.headers.get('Content-Type') matches '^image/'
 ```
+
+## Duplicated headers
+
+If you need to output multiple values for a single header name (e.g. `Set-Cookie`), use `replace: false` in the configuration:
+
+```yaml
+batch_headers:
+  headers:
+    - name: Set-Cookie
+      value: user_language=fr_FR
+      replace: false
+
+    - name: Set-Cookie
+      value: user_currency=EUR
+      replace: false
+```

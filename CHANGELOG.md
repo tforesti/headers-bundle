@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Add missing support for `replace` in the configuration.
+- Add missing documentation for `replace` configuration.
 
 ## [1.1.0] - 2021-07-16
 ### Added
