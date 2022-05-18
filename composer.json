@@ -3,7 +3,7 @@
     "description": "A Symfony bundle to easily add headers to your responses.",
     "type": "symfony-bundle",
     "require": {
-        "php": "^7.2",
+        "php": "^8.0",
         "symfony/http-kernel": "^4.4|^5.0",
         "symfony/dependency-injection": "^4.4|^5.0",
         "symfony/config": "^4.4|^5.0",
